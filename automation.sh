@@ -24,7 +24,7 @@ fi
 
 logType="httpd-logs"
 type=${file#*.}
-size=$(du -h /tmp/$file)
+size=$(du -h /tmp/$file | cut -f1)
 
 echo "$logType		$timestamp		$type		$size" >> /var/www/html/inventory.html
 
